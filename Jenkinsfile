@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/183AIML/hello_python_app.git'
+               git credentialsId: 'PAThelloworldtoken', url: 'https://github.com/183AIML/hello_python_app.git', branch: 'main'
             }
         }
 
