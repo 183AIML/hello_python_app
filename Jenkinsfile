@@ -16,14 +16,14 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat '. venv/bin/activate && pytest test_hello.py'
+                sh '. venv/bin/activate && pytest test_hello.py'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying Application...'
-                bat '. venv/bin/activate && python hello_world.py'
+                sh '. venv/bin/activate && python hello_world.py'
             }
         }
     }
