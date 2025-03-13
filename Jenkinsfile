@@ -10,8 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'python3 -m venv venv'
-                bat '. venv/bin/activate && pip install -r requirement.txt'
+                 bat 'pip install -r requirement.txt'
             }
         }
 
