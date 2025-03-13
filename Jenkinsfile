@@ -10,20 +10,20 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                 sh 'pip install -r requirement.txt'
+                 bat 'pip install -r requirement.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '. venv/bin/activate && pytest test_hello.py'
+                bat '. venv/bin/activate && pytest test_hello.py'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying Application...'
-                sh '. venv/bin/activate && python hello_world.py'
+                bat '. venv/bin/activate && python hello_world.py'
             }
         }
     }
