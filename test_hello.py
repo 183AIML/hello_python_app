@@ -1,5 +1,5 @@
-def say_hello():
-    return "Hello, World!"
 
-if __name__ == "__main__":
-    print(say_hello())
+from hello_world import say_hello
+
+def test_say_hello():
+    assert say_hello() == "Hello, World!"
