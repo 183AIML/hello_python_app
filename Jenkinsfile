@@ -31,7 +31,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying Application...'
-                bat '. venv/bin/activate && python hello_world.py'
+               
+                 bat '''
+                    call venv\\Scripts\\activate
+                    python hello_world.py
+                '''
             }
         }
     }
