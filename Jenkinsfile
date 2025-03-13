@@ -16,7 +16,10 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'venv\\Scripts\\python.exe -m pytest test_hello.py'
+                bat '''
+                    call venv\\Scripts\\activate
+                    pytest test_hello.py
+                '''
             }
         }
 
