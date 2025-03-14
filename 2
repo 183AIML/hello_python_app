@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check Environment Variables') {
+            steps {
+                bat 'echo PATH=%PATH%'
+                bat 'where cmd'
+                bat 'wmic os get osarchitecture'
+                bat 'echo %PROCESSOR_ARCHITECTURE%'
+                bat 'cmd /c echo CMD is working'
+            }
+        }
+    }
+}
